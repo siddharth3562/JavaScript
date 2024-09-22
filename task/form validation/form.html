@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./form.css">
+    <script src="./form.js"></script>
 </head>
 <body>
-    <label for="phno">Phone</label>
-    <input type="text" name="" id="phno" placeholder="Phone no">
+    <div class="container">
+        <div class="child1">
+        <h1>Register here</h1>
+        <input type="text" class="nam" id="name" placeholder="Name">
+        <input type="tel" class="ph" id="phno" placeholder="Phone no">
+        <h6 id="no.error"></h6>
+        <input type="email" class="ema" id="email" placeholder="Email">
+        <h6 id="email.error"></h6>
+        <input type="text" class="pin" id="pincode" placeholder="Pincode">
+        <h6 id="pin.error"></h6>
+        <button class="btn" onclick="valid()">Register</button>
+        </div>
+    </div>  
 </body>
 </html>
