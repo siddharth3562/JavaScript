@@ -9,10 +9,10 @@ function valid(){
     pin=document.getElementById('pincode').value
     console.log(name,phone,email,pin);
     let firstDigit = phone.charAt(0);
-    if (phone.length!=10 || (firstDigit !=='6' && firstDigit !=='7' && firstDigit !=='8' && firstDigit !=='9')){
+    if (phone.length != 10 || !firstDigit.match('[6-9]')){
         document.getElementById('no.error').innerHTML='* invalid number'
     }
-    else if (!/^[a-zA-Z0-9]+@gmail\.com$/.test(email)) {
+    else if (!email.match('^[a-zA-Z0-9]+@gmail\.com$')) {
         document.getElementById('email.error').innerHTML='* invalid email'
     }
     else if(pin.length!=6){
