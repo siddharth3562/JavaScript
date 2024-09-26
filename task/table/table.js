@@ -17,6 +17,16 @@ function display() {
         t_age.textContent=element.age
         t_row.appendChild(t_age)
 
+        const edit_td=document.createElement('td')
+        const edit_btn=document.createElement('button')
+        edit_btn.textContent='Edit'
+        edit_btn.onclick=function(){
+            edit_frm(element.id)
+        }
+
+        edit_td.appendChild(edit_btn)
+        t_row.appendChild(edit_td)
+
         t_var.appendChild(t_row)
     });
 }
@@ -31,6 +41,35 @@ document.getElementById('submit_form').addEventListener('submit',function(event)
     document.getElementById('name').value=''
     document.getElementById('age').value=''
 
+    display()
+})
+
+let edit_id=''
+function edit_frm(id){
+    console.log('editing',id);
+    document.getElementById('edit_form').style.display='block'
+    document.getElementById('submit_form').style.display='none'
+    const edit_data=d.find(user=>user.id==id)
+    document.getElementById('e_id_no').value=edit_data.id
+    document.getElementById('e_name').value=edit_data.name
+    document.getElementById('e_age').value=edit_data.age
+    edit_id=id
+}
+
+document.getElementById('edit_form').addEventListener('submit',function(event){
+    event.preventDefault()
+    const e_id=document.getElementById('e_id_no').value
+    const e_name=document.getElementById('e_name').value
+    const e_age=document.getElementById('e_age').value
+    d=d.map(user=>{
+        if(user.id==edit_id){
+            return{...user,id:e_id,name:e_name,age:e_age}
+        }
+        return user
+    })
+    
+    document.getElementById('edit_form').style.display='none'
+    document.getElementById('submit_form').style.display='block'
     display()
 })
 
