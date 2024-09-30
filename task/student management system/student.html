@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./student.css">
+</head>
+<body>
+    <table class="tab" id="p_table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <form id="submit_form">
+        <div class="child1" >
+            <input type="number" class="id" id="id01" placeholder="id">
+            <input type="text" class="nam" id="name" placeholder="Name">
+            <input type="number" class="ag" id="age" placeholder="age">
+            <input type="email" class="ema" id="email" placeholder="Email">
+            <input type="text" class="cor" id="course" placeholder="Course">
+            <input type="date" class="dat" id="date" placeholder="Date">
+            <button class="btn" value="submit">Register</button>
+        </div>  
+    </form>
+    <form id="edit_form">
+        <div class="child1" >
+            <input type="number" class="id" id="e_id01" placeholder="id">
+            <input type="text" class="nam" id="e_name" placeholder="Name">
+            <input type="number" class="ag" id="e_age" placeholder="age">
+            <input type="email" class="ema" id="e_email" placeholder="Email">
+            <input type="text" class="cor" id="e_course" placeholder="Course">
+            <input type="date" class="dat" id="e_date" placeholder="Date">
+            <button class="btn" value="submit">Register</button>
+        </div>  
+    </form>
+
+    <script src="./student.js"></script>
+</body>
+</html>
