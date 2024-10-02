@@ -44,10 +44,13 @@ function demo(){
         count--
         if (count==0){
             min--   
- 
+            count=59
         }
-
-    },100)
+        if (min==0){
+            clearInterval(c)
+            div.innerHTML=`<h2>completed</h2>`
+        }
+    },10)
     
     main.appendChild(div)
 }
