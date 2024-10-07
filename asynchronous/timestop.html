@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Timing</h2>
+
+    <p>A script on this page starts this clock:</p>
+
+    <p id="demo"></p>
+
+    <button id="toggleButton" onclick="toggleTime()">Stop</button>
+
+    <script>
+        let myVar; // Declare the interval variable
+
+        function startTime() {
+            if (!myVar) { // Start the interval if it's not already running
+                myVar = setInterval(myTimer, 1000);
+                document.getElementById("toggleButton").innerText = "Stop"; // Change button text to "Stop"
+            }
+        }
+
+        function stopTime() {
+            clearInterval(myVar);
+            myVar = null; // Reset the interval variable
+            document.getElementById("toggleButton").innerText = "Start"; // Change button text to "Start"
+        }
+
+        function toggleTime() {
+            if (myVar) {
+                stopTime(); // If the clock is running, stop it
+            } else {
+                startTime(); // If the clock is stopped, start it
+            }
+        }
+
+        function myTimer() {
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+
+        // Start the timer when the page loads
+        startTime();
+    </script>
+
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Timing</h2>
+
+    <p>A script on this page starts this clock:</p>
+
+    <p id="demo"></p>
+
+    <button onclick="stopTime()">Stop time</button>
+    <button onclick="startTime()">Start time</button>
+
+    <script>
+        let myVar; 
+
+        function startTime() {
+            if (!myVar) { 
+                myVar = setInterval(myTimer, 1000);
+            }
+        }
+
+        function stopTime() {
+            clearInterval(myVar);
+            myVar = null; 
+        }
+
+        function myTimer() {
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+        startTime();
+    </script>
+
+</body>
+</html> -->
